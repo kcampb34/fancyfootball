@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2025 at 08:18 PM
+-- Generation Time: Mar 23, 2025 at 08:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,17 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `team`
 --
 
-CREATE TABLE `user` (
-  `userID` int(3) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `usertype` int(1) NOT NULL
+CREATE TABLE `team` (
+  `TeamID` int(3) NOT NULL,
+  `teamname` varchar(40) NOT NULL,
+  `dateupdate` int(10) NOT NULL,
+  `userID` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,20 +39,31 @@ CREATE TABLE `user` (
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `team`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`userID`);
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`TeamID`),
+  ADD KEY `userID` (`userID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `team`
 --
-ALTER TABLE `user`
-  MODIFY `userID` int(3) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `team`
+  MODIFY `TeamID` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `team`
+--
+ALTER TABLE `team`
+  ADD CONSTRAINT `team_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

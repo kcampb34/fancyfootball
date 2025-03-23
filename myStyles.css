@@ -1,0 +1,50 @@
+.boxed {
+  outline-style: groove;
+  outline-color: red;
+}
+.item {
+  display: block;
+}
+label {
+  display: block; 
+  font-weight: bold;
+}
+input[type=text], [type=password] {
+  display: block; 
+}
+input[type=checkbox], [type=radio] {
+  width: 10px;
+}
+select {
+  display: block;
+}
+
+.logo {
+  font-family: Brush Script MT;
+  text-align: center;
+  background-color: darkblue;
+  color: white;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 60px;
+  font-size: 36px;
+}
+
+.prime {/* i know it said to use a singular class but I wanted to experiment with different styles  but this one at least meets all the requirements for step 5*/
+  font-family: Georgia;
+  color: blue;
+  margin: 10px;
+  border-style: solid;
+  border-color: darkblue;
+  padding: 15px;
+  font-size: 20px;
+}
+.userI {
+  font-family: arial;
+  color: green;
+  margin: 20px;
+  border-style: outset;
+  border-color: blueviolet;
+  padding: 2px;
+  font-size: 25px;
+}
