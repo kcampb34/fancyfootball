@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2025 at 08:18 PM
+-- Generation Time: Mar 23, 2025 at 08:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,17 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `player`
 --
 
-CREATE TABLE `user` (
-  `userID` int(3) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `usertype` int(1) NOT NULL
+CREATE TABLE `player` (
+  `playerID` int(3) NOT NULL,
+  `playername` varchar(30) NOT NULL,
+  `teamID` int(3) NOT NULL,
+  `nflteam` varchar(40) NOT NULL,
+  `lastscore` int(3) NOT NULL,
+  `totalscore` int(3) NOT NULL,
+  `avgscore` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,20 +42,31 @@ CREATE TABLE `user` (
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `player`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`userID`);
+ALTER TABLE `player`
+  ADD PRIMARY KEY (`playerID`),
+  ADD KEY `teamID` (`teamID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `player`
 --
-ALTER TABLE `user`
-  MODIFY `userID` int(3) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `player`
+  MODIFY `playerID` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `player`
+--
+ALTER TABLE `player`
+  ADD CONSTRAINT `player_ibfk_1` FOREIGN KEY (`teamID`) REFERENCES `team` (`TeamID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
