@@ -29,17 +29,9 @@
       <a href="index.php" class="w3-bar-item w3-button w3-mobile w3-green">Home</a>
       <a href="https://www.espn.com/" target="_blank" class="w3-bar-item w3-button w3-mobile">ESPN</a>
       <a href="https://www.nfl.com/news/" target="_blank" class="w3-bar-item w3-button w3-mobile">NFL News</a>
-      <div class="w3-dropdown-hover w3-mobile">
-        <button class="w3-button">About <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-          <a href="https://www.fitchburgstate.edu/" target="_blank" class="w3-bar-item w3-button w3-mobile">Location</a>
-          <a href="projectIdea.php" class="w3-bar-item w3-button w3-mobile">Project idea</a>
-          <a href="howToDo.php" class="w3-bar-item w3-button w3-mobile">How to accomplish Final project</a>
-        </div>
-      </div>
       <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
       <a href="https://www.google.com/webhp " class="w3-bar-item w3-button w3-green">Go</a>
-      <a href="user.php" class="w3-bar-item w3-button w3-mobile w3-center">User Page</a>
+      <a href="userP.php" class="w3-bar-item w3-button w3-mobile w3-center">User Page</a>
       <a href="signup.php" class="w3-bar-item w3-button w3-mobile">Sign Up</a>
  <div class="col-sm-2">
   <?php if (isset($_SESSION['name'])): ?>
