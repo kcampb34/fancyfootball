@@ -6,6 +6,19 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="mystyles.css">
+   
+   <style>
+       
+      @font-face {
+        font-family: "Freshman";
+        src: url("other/Freshman.ttf") format("truetype");
+      }
+
+      .freshman {
+        font-family: "Freshman", sans-serif;
+      }
+    </style> 
+   
  </head>
  <body>
      <?php
@@ -25,7 +38,7 @@
      }
      ?>
    <div class="w3-container">
-     <div class="w3-bar w3-blue boxed">
+     <div class="w3-bar w3-blue freshman">
        <a href="index.php" class="w3-bar-item w3-button w3-mobile w3-green">Home</a>
        <a href="https://www.espn.com/" target="_blank" class="w3-bar-item w3-button w3-mobile">ESPN</a>
        <a href="https://www.nfl.com/news/" target="_blank" class="w3-bar-item w3-button w3-mobile">NFL News</a>
@@ -46,7 +59,7 @@
          <button type="submit" class="btn btn-sm w3-blue w3-round" style="margin-left:1500px;">Login</button>
        </form>
    <?php endif; ?>
- </div>
-     </div>
-   </div>
+       </div>
+    </div>
+</div>
  </body>

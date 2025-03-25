@@ -48,3 +48,12 @@ select {
   padding: 2px;
   font-size: 25px;
 }
+
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+
+.freshman {
+    font-family: "Freshman", sans-serif;
+    src: url("other/Freshman.ttf") format("truetype");
+    }
