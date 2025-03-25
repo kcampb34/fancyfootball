@@ -5,7 +5,7 @@ require 'dbConnect.php'; // Assumes dbConnect.php contains openDB(), closeDB(), 
 $servername = "localhost";
 $dbname = "fantasyhelper";
 $username = "Braeden";
-$password = "Braeden";
+$password = "Kenny";
 
 // Get user inputs
 $user = htmlspecialchars($_GET['user']);
@@ -14,12 +14,10 @@ $lname = htmlspecialchars($_GET['lname']);
 $pswd = htmlspecialchars($_GET['pswd']);
 $pswd2 = htmlspecialchars($_GET['pswd2']);
 $email = htmlspecialchars($_GET['email']);
-$fteam = htmlspecialchars($_GET['fteam']);
 
 
-
-$sql = "INSERT INTO user (username, firstname, lastname, password, email, securityQ) 
-        VALUES ('$user', '$fname', '$lname', '$pswd', '$email', '$fteam')";
+$sql = "INSERT INTO user (username, firstname, lastname, password, email) 
+        VALUES ('$user', '$fname', '$lname', '$pswd', '$email')";
 
 
 $result = ModifyDB($servername, $dbname, $username, $password, $sql);
