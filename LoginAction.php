@@ -23,7 +23,7 @@ if (is_array($result) && count($result) > 0) {
     if ($usertype == 1) {
         header("location:admin.php");
     } else {
-        header("location:user.php");
+        header("location:userP.php");
     }
     exit;
 } else {
