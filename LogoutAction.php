@@ -1,6 +1,5 @@
 <?php
 
-//need to modify
 clearstatcache();
 session_start();
 unset($_SESSION['userID']);

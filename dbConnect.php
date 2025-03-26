@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "Braeden";
 $password = "Kenny";
-$dbname = "fancyfootball";
+$dbname = "fancy football";
 
 function modifyDB($servername, $dbname, $username, $password, $sql) {
     try {
