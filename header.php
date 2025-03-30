@@ -29,7 +29,7 @@
          $homepage = "admin.php";
          $signupPage = "signup.php";
        } else {
-         $homepage = "welcome.php";
+         $homepage = "userP.php";
          $signupPage = "signup.php";
        }
      } else {
@@ -38,7 +38,7 @@
      }
      ?>
    <div class="w3-container">
-     <div class="w3-bar w3-blue freshman">
+     <div class="w3-bar w3-blue boxed">
        <a href="index.php" class="w3-bar-item w3-button w3-mobile w3-green">Home</a>
        <a href="https://www.espn.com/" target="_blank" class="w3-bar-item w3-button w3-mobile">ESPN</a>
        <a href="https://www.nfl.com/news/" target="_blank" class="w3-bar-item w3-button w3-mobile">NFL News</a>
@@ -48,7 +48,7 @@
        <a href="signup.php" class="w3-bar-item w3-button w3-mobile">Sign Up</a>
   <div class="col-sm-2">
    <?php if (isset($_SESSION['name'])): ?>
-       <h6><?php echo htmlspecialchars($_SESSION['name'] ); ?></h6>
+       "echo Welcome"($_SESSION['name'] );
        <form class="form-inline" name="logout" action="LogoutAction.php" method="post">
          <button type="submit" class="btn btn-danger btn-sm" style="margin-left:1800px;">Logout</button>
        </form>
