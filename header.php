@@ -49,16 +49,16 @@
   <div class="col-sm-2">
    <?php if (isset($_SESSION['name'])): ?>
    <div class="w3-right d-flex align-items-center">
-       <h6 class="me-2">Welcome, <?php echo $_SESSION['user']; ?></h6>
+       <h6 class="me-2">Welcome, <?php echo $_SESSION['name']; ?></h6>
        <form class="form-inline" name="logout" action="LogoutAction.php" method="post">
            <button type="submit" class="btn btn-danger btn-sm">Logout</button>
        </form>
    </div>
    <?php else: ?>
-       <form class="form-inline d-flex" name="login" action="LoginAction.php" method="post">
-           <input type="text" class="form-control form-control-sm w3-input w3-border w3-light-grey me-2" id="user" required placeholder="Username" name="user">
-           <input type="password" class="form-control form-control-sm w3-input w3-border w3-light-grey me-2" id="pswd" required placeholder="Password" name="pswd">
-           <button type="submit" class="btn btn-sm w3-blue w3-round">Login</button>
+       <form class="form-inline" name="login" action="LoginAction.php" method="post">
+           <input type="text" class="form-control form-control-sm w3-input w3-border w3-light-grey" style="margin-left:1500px;margin-bottom:10px" id="user" required placeholder="Username" name="user">
+           <input type="password" class="form-control form-control-sm w3-input w3-border w3-light-grey" style="margin-left:1500px;" id="pswd" required placeholder="Password" name="pswd">
+         <button type="submit" class="btn btn-sm w3-blue w3-round" style="margin-left:1500px;">Login</button>
        </form>
    <?php endif; ?>
        </div>
