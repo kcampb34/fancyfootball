@@ -50,9 +50,6 @@ try {
         redirectWithError("email", "Email already in use.");
     }
 
-    // Hash the password for security
-    $hashedPassword = password_hash($pswd, PASSWORD_DEFAULT);
-
     // Insert new user
     $sql_insert = "INSERT INTO user (username, firstname, lastname, password, email) 
                    VALUES (:username, :firstname, :lastname, :password, :email)";
@@ -60,7 +57,7 @@ try {
     $stmt->bindParam(':username', $user, PDO::PARAM_STR);
     $stmt->bindParam(':firstname', $fname, PDO::PARAM_STR);
     $stmt->bindParam(':lastname', $lname, PDO::PARAM_STR);
-    $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $pswd, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
@@ -96,3 +93,4 @@ try {
     closeDB();
 }
 ?>
+
