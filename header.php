@@ -47,10 +47,12 @@
        <a href="userP.php" class="w3-bar-item w3-button w3-mobile w3-center">User Page</a>
        <a href="signup.php" class="w3-bar-item w3-button w3-mobile">Sign Up</a>
   <div class="col-sm-2">
+  <div class="w3-center" style="margin-left:1500px;">
    <?php if (isset($_SESSION['name'])):
-       echo "<h6>Welcome</h6>" . $_SESSION['name']; ?>
+       echo "<h6>Welcome</h6>" . $_SESSION['name'] ?>
+      </div>
        <form class="form-inline" name="logout" action="LogoutAction.php" method="post">
-         <button type="submit" class="btn btn-danger btn-sm" style="margin-left:1800px;">Logout</button>
+         <button type="submit" class="btn btn-danger btn-sm" style="margin-left:1500px;">Logout</button>
        </form>
    <?php else: ?>
        <form class="form-inline" name="login" action="LoginAction.php" method="post">
@@ -61,5 +63,5 @@
    <?php endif; ?>
        </div>
     </div>
-</div>
+   </div>
  </body>
