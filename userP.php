@@ -10,4 +10,5 @@ if ($usertype == 1) {
   header("Location:admin.php");
   exit;
 }
+
 ?>

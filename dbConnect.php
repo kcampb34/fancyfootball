@@ -58,4 +58,3 @@ function closeDB() {
     global $conn;
     $conn = null; // Close the connection
 }
-?>
