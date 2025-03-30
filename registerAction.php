@@ -51,7 +51,7 @@ try {
     }
 
     // Hash the password before storing
-    $hashed_password = password_hash($pswd, PASSWORD_DEFAULT);
+    $password = password($pswd, PASSWORD_DEFAULT);
 
     // Insert new user
     $sql_insert = "INSERT INTO user (username, firstname, lastname, password, email) 
