@@ -58,7 +58,7 @@
        <form class="form-inline" name="login" action="LoginAction.php" method="post">
            <input type="text" class="form-control form-control-sm w3-input w3-border w3-light-grey" style="margin-left:1500px;margin-bottom:10px" id="user" required placeholder="Username" name="user">
            <input type="password" class="form-control form-control-sm w3-input w3-border w3-light-grey" style="margin-left:1500px;" id="pswd" required placeholder="Password" name="pswd">
-         <button type="submit" class="btn btn-sm w3-blue w3-round" style="margin-left:1500px;">Login</button>
+         <a href="LoginAction.php" button type="submit" class="btn btn-sm w3-blue w3-round" style="margin-left:1500px;">Login</button>
        </form>
    <?php endif; ?>
        </div>
