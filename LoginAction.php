@@ -4,31 +4,20 @@ require "dbConnect.php";
 $user = $_POST["user"];
 $pswd = $_POST["pswd"];
 
-$sql = "SELECT userID, firstname, lastname, usertype FROM user WHERE username = ? AND password = ?";
-$result = LoginDB($sql, $user, $pswd);
+$sql = "SELECT userID, firstname, lastname, usertype, password FROM user WHERE username = ?";
+$result = LoginDB($sql, $user);
 
 if (is_array($result) && count($result) > 0) {
-    // Fetch the first matching row
     $row = $result[0];
-    $userID = $row['userID'];
-    $firstname = $row['firstname'];
-    $lastname = $row['lastname'];
-    $usertype = $row['usertype'];
+    if (password_verify($pswd, $row['password'])) {
+        session_start();
+        $_SESSION['userID'] = $row['userID'];
+        $_SESSION['name'] = $row['firstname'] . " " . $row['lastname'];
+        $_SESSION['usertype'] = $row['usertype'];
 
-    session_start();
-    $_SESSION['userID'] = $userID;
-    $_SESSION['name'] = $firstname . " " . $lastname;
-    $_SESSION['usertype'] = $usertype;
-
-    if ($usertype == 1) {
-        header("location:admin.php");
-    } else {
-        header("location:userP.php");
+        header("location:" . ($row['usertype'] == 1 ? "admin.php" : "userP.php"));
+        exit;
     }
-    exit;
-} else {
-    // Redirect with an error message
-    header("location:index.php?msg=" . (is_string($result) ? urlencode($result) : "Login Failed"));
-    exit;
 }
+
 ?>

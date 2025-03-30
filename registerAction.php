@@ -49,6 +49,10 @@ try {
     if ($stmt->rowCount() > 0) {
         redirectWithError("email", "Email already in use.");
     }
+
+    // Hash the password for security
+    $hashedPassword = password_hash($pswd, PASSWORD_DEFAULT);
+
     // Insert new user
     $sql_insert = "INSERT INTO user (username, firstname, lastname, password, email) 
                    VALUES (:username, :firstname, :lastname, :password, :email)";
@@ -56,12 +60,33 @@ try {
     $stmt->bindParam(':username', $user, PDO::PARAM_STR);
     $stmt->bindParam(':firstname', $fname, PDO::PARAM_STR);
     $stmt->bindParam(':lastname', $lname, PDO::PARAM_STR);
-    $stmt->bindParam(':password', $pswd, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
-        header("Location: signup.php?success=Registration successful!");
-        exit();
+        // Retrieve user ID and type
+        $sql_get_user = "SELECT userID, usertype FROM user WHERE username = :username";
+        $stmt = $conn->prepare($sql_get_user);
+        $stmt->bindParam(':username', $user, PDO::PARAM_STR);
+        $stmt->execute();
+        $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($userData) {
+            session_start();
+            $_SESSION['userID'] = $userData['userID'];
+            $_SESSION['name'] = $fname . " " . $lname;
+            $_SESSION['usertype'] = $userData['usertype'];
+
+            // Redirect user based on user type
+            if ($userData['usertype'] == 1) {
+                header("Location: admin.php");
+            } else {
+                header("Location: userP.php");
+            }
+            exit();
+        } else {
+            redirectWithError("general", "Error logging in after registration.");
+        }
     } else {
         redirectWithError("general", "Could not register user.");
     }
