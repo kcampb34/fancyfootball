@@ -36,10 +36,7 @@
        $homepage = "index.php";
        $signupPage = "signup.php";
      }
-     
-     
-     require "DBConnect.php";
-     
+ 
      ?>
    <div class="w3-container">
      <div class="w3-bar w3-blue boxed">
