@@ -49,7 +49,7 @@
   <div class="col-sm-2">
    <?php if (isset($_SESSION['name'])): ?>
    <div class="w3-right d-flex align-items-center">
-       <h6 class="me-2">Welcome, <?php echo $_SESSION['name']; ?></h6>
+       <h6 class="me-2">Welcome, <?php echo $_SESSION['user']; ?></h6>
        <form class="form-inline" name="logout" action="LogoutAction.php" method="post">
            <button type="submit" class="btn btn-danger btn-sm">Logout</button>
        </form>
