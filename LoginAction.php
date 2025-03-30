@@ -1,34 +1,43 @@
 <?php
 require "dbConnect.php";
 
+session_start();
+
+// Retrieve login form data
 $user = $_POST["user"];
 $pswd = $_POST["pswd"];
 
-$sql = "SELECT userID, firstname, lastname, usertype FROM user WHERE username = ? AND password = ?";
-$result = LoginDB($sql, $user, $pswd);
+// Prepare SQL query to fetch user details based on username
+$sql = "SELECT userID, firstname, lastname, usertype, password FROM user WHERE username = ?";
+$result = LoginDB($sql, $user);
 
+// Check if the query returned any results
 if (is_array($result) && count($result) > 0) {
-    // Fetch the first matching row
     $row = $result[0];
-    $userID = $row['userID'];
-    $firstname = $row['firstname'];
-    $lastname = $row['lastname'];
-    $usertype = $row['usertype'];
 
-    session_start();
-    $_SESSION['userID'] = $userID;
-    $_SESSION['name'] = $firstname . " " . $lastname;
-    $_SESSION['usertype'] = $usertype;
+    // Use password_verify to check if the provided password matches the stored hashed password
+    if (password_verify($pswd, $row['password'])) {
+        // Successful login, store session variables
+        $_SESSION['userID'] = $row['userID'];
+        $_SESSION['name'] = $row['firstname'] . " " . $row['lastname'];
+        $_SESSION['usertype'] = $row['usertype'];
 
-    if ($usertype == 1) {
-        header("location:admin.php");
+        // Redirect based on user type
+        if ($row['usertype'] == 1) {
+            // Admin user, redirect to admin page
+            header("Location: admin.php");
+        } else {
+            // Regular user, redirect to user profile page
+            header("Location: userP.php");
+        }
+        exit;
     } else {
-        header("location:userP.php");
+        // Invalid password, redirect with an error message
+        header("Location: index.php?msg=" . urlencode("Invalid password."));
+        exit;
     }
-    exit;
 } else {
-    // Redirect with an error message
-    header("location:index.php?msg=" . (is_string($result) ? urlencode($result) : "Login Failed"));
+    // No user found with the provided username
+    header("Location: index.php?msg=" . urlencode("User not found."));
     exit;
 }
-?>
