@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2025 at 08:18 PM
+-- Generation Time: Apr 02, 2025 at 05:54 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fancyfootball`
+-- Database: `fancy football`
 --
 
 -- --------------------------------------------------------
@@ -38,6 +38,18 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `password`, `email`, `firstname`, `lastname`, `usertype`) VALUES
+(1, 'Braeden', 'Kenny', 'bmorri16@student.fitchburgstate.edu', 'Braeden', 'Campbell', 1),
+(7, 'dave', 'dave', 'dave@gmail.com', 'dave', 'mor', 0),
+(9, 'bill', 'bill', 'bill@gmail.com', 'bill', 'mar', 0),
+(11, 'bob', 'bob', 'Braeden@gmail.com', 'bob', 'drop', 0),
+(12, 'liam', 'liam', 'liam@gmail.com', 'liam', 'oak', 0),
+(15, 'AlexM', 'miniA', 'AlexM@yahoo.com', 'Alex', 'Mercer', 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +67,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `userID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
