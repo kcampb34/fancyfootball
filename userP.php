@@ -16,4 +16,3 @@ if (!isset($_SESSION['usertype'])) {
     header("Location: index.php");
     exit;
 }
-?>
