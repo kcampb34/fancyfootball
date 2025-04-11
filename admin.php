@@ -14,7 +14,7 @@
 </div>
     </div>
     <div class="prime">
-      <img src="https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2023-12/Josh%20Allen%20Christian%20McCaffrey%20Justin%20Jefferson%20122223%20Getty%20FTR.png?h=920929c4&itok=UXr6kMKi" alt="nfl fantasy" style="margin-left:200px;">
+        <img src="https://media.pff.com/2024/07/FiddyNEW-scaled.jpg?w=1912&h=1076" alt="nfl fantasy" height="800px;">
     </div>
   <br>
   <?php include 'footer.php' ?>
