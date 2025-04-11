@@ -60,7 +60,7 @@
 
     <!-- Header Section (Remains Centered) -->
     <div class="header-container">
-        <h1>Please enter new player information</h1>
+        <h1>Please select a player</h1>
     </div>
 
     <!-- Signup Form (Centered) -->
