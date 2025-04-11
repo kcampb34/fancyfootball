@@ -45,5 +45,6 @@ try {
     $stmt->bindParam(':lastscore', $lscore, PDO::PARAM_STR);
     $stmt->bindParam(':totalscore', $tscore, PDO::PARAM_STR);
     $stmt->bindParam(':avgscore', $ascore, PDO::PARAM_STR);
-?>
+    }
+    ?>
 
