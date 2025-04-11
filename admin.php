@@ -8,8 +8,8 @@
 <div class="w3-panel w3-leftbar w3-light-grey">
     <div class="logo">
         <h1 class="w3-cursive freshman-font">Welcome Admin</h1>
-        <a href="newPlayer.php" button type="submit" class="btn btn-sm w3-blue w3-round">Create Player</button></a>
-        <a href="index.php" button type="submit" class="btn btn-sm w3-blue w3-round">Modify</button></a>
+        <a href="newPlayer.php" button type="submit" class="btn btn-sm w3-blue w3-round w3-cursive freshman-font">Create Player</button></a>
+        <a href="index.php" button type="submit" class="btn btn-sm w3-blue w3-round w3-cursive freshman-font">Modify</button></a>
 </div>
 </div>
     </div>

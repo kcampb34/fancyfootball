@@ -12,6 +12,6 @@
     <a href="https://twitter.com/NFL?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Twitter</a>
   <br>
   <h2>Contact us</h2>
-  <p>Admin email address: kcampb34@student.fitchburgstate.edu or bmorri16@student.fitchburgstate.edu</a></p>
+  <p>Admin Email Address: kcampb34@student.fitchburgstate.edu or bmorri16@student.fitchburgstate.edu</a></p>
   </div>
 </div> 
