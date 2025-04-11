@@ -1,13 +1,19 @@
 <?php 
 include 'header.php';
-if (!(isset($_SESSION['usertype'])) or $usertype != 0) {
-  header("Location:index.php");
-  exit;
+
+// Ensure session is only started if not already active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
-?>
-<?php 
-if ($usertype == 1) {
+ 
+if ($_SESSION['usertype'] == 1) {
   header("Location:admin.php");
   exit;
+}
+
+// Check user type
+if (!isset($_SESSION['usertype'])) {
+    header("Location: index.php");
+    exit;
 }
 ?>
