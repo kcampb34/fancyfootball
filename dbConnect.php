@@ -46,3 +46,4 @@ function LoginDB($sql, $user, $pswd) {
     } finally {
         closeDB(); // Ensure the connection is closed
     }
+}
