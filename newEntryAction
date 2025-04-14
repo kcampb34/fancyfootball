@@ -23,7 +23,7 @@ if ($message !== "Connected") {
 }
 
 global $conn; 
-
+/*
 try {
     // Check if player name already exists
     $sql_check_player = "SELECT playername FROM player WHERE playername = :playername";
@@ -34,7 +34,7 @@ try {
     if ($stmt->rowCount() > 0) {
         redirectWithError("pname", "playername already exists.");
     }
-
+*/
     // Insert new player
     $sql_insert = "INSERT INTO user (playername, position, nflteam, lastscore, totalscore, avgscore) 
                    VALUES (:playername, :position, :nflteam, :lastscore, :totalscore, :avgscore)";
@@ -44,6 +44,6 @@ try {
     $stmt->bindParam(':nflteam', $NFLteam, PDO::PARAM_STR);
     $stmt->bindParam(':lastscore', $lscore, PDO::PARAM_STR);
     $stmt->bindParam(':totalscore', $tscore, PDO::PARAM_STR);
-    $stmt->bindParam(':avgscore', $ascore, PDO::PARAM_STR);
-    }
+    $stmt->bindParam(':avgscore', $ascore, PDO::PARAM_STR); 
+    
     ?>
