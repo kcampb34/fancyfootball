@@ -61,12 +61,13 @@ if (isset($_GET['query']) && !empty(trim($_GET['query']))) {
         try {
             // Search for players by playername, nflteam, position, or avgscore
             $stmt = $conn->prepare("
-                SELECT playername, position, nflteam, avgscore 
+                SELECT playername, position, nflteam, avgscore, playerimage 
                 FROM player 
                 WHERE playername LIKE ? 
                    OR nflteam LIKE ? 
                    OR position LIKE ? 
                    OR avgscore LIKE ?
+                   OR playerimage LIKE ?
             ");
 
             $searchParam = "%" . $searchQuery . "%";
@@ -74,6 +75,7 @@ if (isset($_GET['query']) && !empty(trim($_GET['query']))) {
             $stmt->bindParam(2, $searchParam, PDO::PARAM_STR);
             $stmt->bindParam(3, $searchParam, PDO::PARAM_STR);
             $stmt->bindParam(4, $searchParam, PDO::PARAM_STR);
+            $stmt->bindParam(5, $searchParam, PDO::PARAM_STR);
 
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
