@@ -47,3 +47,30 @@ function LoginDB($sql, $user, $pswd) {
         closeDB(); // Ensure the connection is closed
     }
 }
+
+$searchQuery = '';
+$results = [];
+
+if (isset($_GET['query']) && !empty(trim($_GET['query']))) {
+    $searchQuery = trim($_GET['query']);
+    $message = openDB(); // Open the connection
+
+    if ($message === "Connected") {
+        global $conn; // Use the global $conn opened by openDB()
+
+        try {
+            // Search for players whose name matches the search query
+            $stmt = $conn->prepare("SELECT playername, position, nflteam, avgscore FROM player WHERE playername LIKE ?");
+            $searchParam = "%" . $searchQuery . "%";
+            $stmt->bindParam(1, $searchParam, PDO::PARAM_STR);
+            $stmt->execute();
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Query Error: " . $e->getMessage();
+        } finally {
+            closeDB(); // Always close the connection
+        }
+    } else {
+        echo "Database connection error: " . $message;
+    }
+}
