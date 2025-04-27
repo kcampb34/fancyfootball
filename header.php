@@ -25,18 +25,10 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="index.php" class="w3-bar-item w3-button w3-green">Home</a>
             <a href="https://www.espn.com/" target="_blank" class="w3-bar-item w3-button">ESPN</a>
             <a href="https://www.nfl.com/news/" target="_blank" class="w3-bar-item w3-button">NFL News</a>
-            
-            <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-            <a href="https://www.google.com/" class="w3-bar-item w3-button w3-green">Go</a>-->
-            <!-- START OF UPDATED SEARCH BAR -->
             <form action="search.php" method="get" class="w3-bar-item" style="display:flex; align-items:center;">
                 <input type="text" name="query" class="w3-input" placeholder="Search.." style="margin-right:5px;">
                 <button type="submit" class="w3-button w3-green">Go</button>
             </form>
-            <!-- END OF UPDATED SEARCH BAR -->
-
-            
-            
             <a href="userP.php" class="w3-bar-item w3-button">User Page</a>
             <a href="signup.php" class="w3-bar-item w3-button">Sign Up</a>
 
