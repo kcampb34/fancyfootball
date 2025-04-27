@@ -59,10 +59,22 @@ if (isset($_GET['query']) && !empty(trim($_GET['query']))) {
         global $conn; // Use the global $conn opened by openDB()
 
         try {
-            // Search for players whose name matches the search query
-            $stmt = $conn->prepare("SELECT playername, position, nflteam, avgscore FROM player WHERE playername LIKE ?");
+            // Search for players by playername, nflteam, position, or avgscore
+            $stmt = $conn->prepare("
+                SELECT playername, position, nflteam, avgscore 
+                FROM player 
+                WHERE playername LIKE ? 
+                   OR nflteam LIKE ? 
+                   OR position LIKE ? 
+                   OR avgscore LIKE ?
+            ");
+
             $searchParam = "%" . $searchQuery . "%";
             $stmt->bindParam(1, $searchParam, PDO::PARAM_STR);
+            $stmt->bindParam(2, $searchParam, PDO::PARAM_STR);
+            $stmt->bindParam(3, $searchParam, PDO::PARAM_STR);
+            $stmt->bindParam(4, $searchParam, PDO::PARAM_STR);
+
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
