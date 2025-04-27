@@ -74,4 +74,3 @@ if (isset($_GET['query']) && !empty(trim($_GET['query']))) {
         echo "Database connection error: " . $message;
     }
 }
-
