@@ -2,8 +2,25 @@
   <head>
     <title>Fancy Football</title>
   <br>
-  <?php include 'header.php' ?>
-  <?php require 'dbConnect.php' ?>
+  <?php include 'header.php';
+  
+  // Ensure session is only started if not already active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+ 
+if ($_SESSION['usertype'] == 0) {
+  header("Location:userP.php");
+  exit;
+}
+
+// Check user type
+if (!isset($_SESSION['usertype'])) {
+    header("Location: index.php");
+    exit;
+}
+  ?>
+  <?php require 'dbConnect.php'?>
 </head>
 <div class="w3-panel w3-leftbar w3-light-grey">
     <div class="logo">
