@@ -17,15 +17,22 @@
         <p>Showing results for: <strong><?php echo htmlspecialchars($searchQuery); ?></strong></p>
 
         <?php if (!empty($results)): ?>
-            <div class="list-group">
-                <?php foreach ($results as $player): ?>
-                    <div class="list-group-item">
-                        <h5><?php echo htmlspecialchars($player['playername']); ?> (<?php echo htmlspecialchars($player['position']); ?>)</h5>
-                        <p><strong>Team:</strong> <?php echo htmlspecialchars($player['nflteam']); ?></p>
-                        <p><strong>Stats:</strong> <?php echo htmlspecialchars($player['avgscore']); ?></p>
-                    </div>
-                <?php endforeach; ?>
+    <div class="list-group">
+        <?php foreach ($results as $player): ?>
+            <div class="list-group-item">
+                <h5><?php echo htmlspecialchars($player['playername']); ?> (<?php echo htmlspecialchars($player['position']); ?>)</h5>
+                <p><strong>Team:</strong> <?php echo htmlspecialchars($player['nflteam']); ?></p>
+                <p><strong>Average Stats:</strong> <?php echo htmlspecialchars($player['avgscore']); ?></p>
+
+                <?php if (!empty($player['playerimage'])): ?>
+                    <img src="<?php echo htmlspecialchars($player['playerimage']); ?>" style="max-width:auto; height:auto;">
+                <?php else: ?>
+                    <p>No Image Available</p>
+                <?php endif; ?>
             </div>
+        <?php endforeach; ?>
+    </div>
+
         <?php else: ?>
             <div class="alert alert-warning mt-3">No players found matching your search.</div>
         <?php endif; ?>
