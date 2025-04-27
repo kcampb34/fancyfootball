@@ -19,7 +19,6 @@ if (!isset($_SESSION['usertype'])) {
     header("Location: index.php");
     exit;
 }
-  
   ?>
   <?php require 'dbConnect.php'?>
 </head>
