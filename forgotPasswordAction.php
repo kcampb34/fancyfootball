@@ -47,7 +47,7 @@ try {
     $stmt->bindParam(':username', $user, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
-        header("Location: user.php?message=" . urlencode("Password updated successfully."));
+        header("Location: index.php?message=" . urlencode("Password updated successfully."));
         exit();
     } else {
         redirectWithError("general", "Could not update password.");
