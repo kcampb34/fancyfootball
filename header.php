@@ -46,6 +46,10 @@ if (session_status() === PHP_SESSION_NONE) {
                         <input type="password" class="form-control form-control-sm w3-input w3-border w3-light-grey" placeholder="Password" name="pswd" required>
                         <button type="submit" class="btn btn-sm w3-blue w3-round">Login</button>
                     </form>
+                    <form name="login" action="forgotPassword.php" method="post">
+                        <button type="submit" class="btn btn-sm w3-blue w3-round" >Forgot Password</button>
+                    </form>
+
                 <?php endif; ?>
             </div>
         </div>
