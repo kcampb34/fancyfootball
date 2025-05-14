@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2025 at 08:19 PM
+-- Generation Time: May 14, 2025 at 02:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fancyfootball`
+-- Database: `fancy football`
 --
 
 -- --------------------------------------------------------
@@ -29,13 +29,43 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `player` (
   `playerID` int(3) NOT NULL,
-  `playername` varchar(30) NOT NULL,
-  `teamID` int(3) NOT NULL,
+  `playername` varchar(50) NOT NULL,
+  `position` varchar(30) NOT NULL,
+  `teamID` int(3) DEFAULT NULL,
   `nflteam` varchar(40) NOT NULL,
   `lastscore` int(3) NOT NULL,
   `totalscore` int(3) NOT NULL,
   `avgscore` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `player`
+--
+
+INSERT INTO `player` (`playerID`, `playername`, `position`, `teamID`, `nflteam`, `lastscore`, `totalscore`, `avgscore`) VALUES
+(1, 'Jamyr Gibbs', 'RB', 7, 'Detroit Lions', 26, 362, 21),
+(2, 'Saquon Barkley', 'RB', NULL, 'Philadelphia Eagles', 19, 355, 22),
+(3, 'Bijan Robinson', 'RB', 7, 'Atlanta Falcons', 25, 342, 20),
+(4, 'Derrick Henry', 'RB', NULL, 'Baltimore Ravens', 25, 336, 20),
+(5, 'Brock Purdy', 'QB', 7, 'SF 49ers', 30, 283, 18),
+(6, 'Lamar Jackson', 'QB', 7, 'Baltimore Ravens', 29, 430, 25),
+(7, 'Josh Allen', 'QB', NULL, 'Buffalo Bills', 23, 379, 22),
+(8, 'De\'Von Achane', 'RB', 7, 'Miami Dolphins', 5, 300, 17),
+(13, 'Ja\'Marr Chase', 'WR', 7, 'Cincinnati Bengals', 19, 403, 24),
+(14, 'Justin Jefferson', 'WR', 7, 'Cincinnati Bengals', 17, 317, 18),
+(15, 'Amon-Ra St. Brown', 'WR', 7, 'Minnesota Vikings', 20, 316, 19),
+(16, 'Brian Thomas Jr.', 'WR', 7, 'Jacksonville Jaguars', 17, 284, 16),
+(17, 'Drake London', 'WR', 7, 'Atlanta Falcons', 17, 280, 16),
+(18, 'Brock Bowers', 'TE', 7, 'Las Vegas Raiders', 14, 262, 15),
+(19, 'Trey McBride', 'TE', NULL, 'Arizona Cardinals', 30, 249, 15),
+(20, 'George Kittle', 'TE', NULL, 'SF 49ers', 19, 236, 16),
+(21, 'Jonnu Smith', 'TE', 7, 'Miami Dolphins', 11, 222, 13),
+(22, 'Broncos D/ST', 'D/ST', 7, 'Denver Broncos', 3, 166, 10),
+(23, 'Vikings D/ST', 'D/ST', NULL, 'Minnesota Vikings', 7, 152, 9),
+(24, 'Packers D/ST', 'D/ST', 7, 'Green Bay Packers', 0, 140, 8),
+(25, 'Chris Boswell', 'K', 7, 'Pittsburgh Steelers', 4, 188, 11),
+(26, 'Brandon Aubrey', 'K', 7, 'Dallas Cowboys', 0, 187, 11),
+(27, 'Cameron Dicker', 'K', NULL, 'Los Angeles Chargers', 17, 176, 10);
 
 --
 -- Indexes for dumped tables
@@ -56,7 +86,7 @@ ALTER TABLE `player`
 -- AUTO_INCREMENT for table `player`
 --
 ALTER TABLE `player`
-  MODIFY `playerID` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `playerID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
