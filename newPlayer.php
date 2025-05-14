@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title>New Player Entry</title>
     <?php include 'header.php'; ?>
-    <style>
+ <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
