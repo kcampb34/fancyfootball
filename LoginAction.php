@@ -18,7 +18,7 @@ if (is_array($result) && count($result) > 0) {
     // Store user details in session
     $_SESSION['userID'] = $row['userID'];
     $_SESSION['name'] = $row['firstname'] . " " . $row['lastname'];
-    $_SESSION['usertype'] = $row['usertype'];
+    $_SESSION['usertype'] = $row['usertype']; 
 
     // Redirect based on user type
     if ($row['usertype'] == 1) {
