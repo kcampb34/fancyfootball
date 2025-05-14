@@ -30,6 +30,7 @@ if (!isset($_SESSION['usertype'])) {
         <h1 class="w3-cursive freshman-font">Hello Coach</h1>
         <a href="profile.php" button type="submit" class="btn btn-sm w3-blue w3-round w3-cursive freshman-font">View Profile</button></a>
         <a href="selectRoster.php" button type="submit" class="btn btn-sm w3-blue w3-round w3-cursive freshman-font">Test Draft</button></a>
+        <a href="manageTeam.php" button type="submit" class="btn btn-sm w3-blue w3-round w3-cursive freshman-font">Manage Team</button></a>
 </div>
 </div>
     </div>
