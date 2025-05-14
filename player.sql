@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2025 at 06:45 AM
+-- Generation Time: May 14, 2025 at 02:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,28 +43,28 @@ CREATE TABLE `player` (
 --
 
 INSERT INTO `player` (`playerID`, `playername`, `position`, `teamID`, `nflteam`, `lastscore`, `totalscore`, `avgscore`) VALUES
-(1, 'Jamyr Gibbs', 'RB', 6, 'Detroit Lions', 26, 362, 21),
-(2, 'Saquon Barkley', 'RB', 6, 'Philadelphia Eagles', 19, 355, 22),
-(3, 'Bijan Robinson', 'RB', 6, 'Atlanta Falcons', 25, 342, 20),
+(1, 'Jamyr Gibbs', 'RB', 7, 'Detroit Lions', 26, 362, 21),
+(2, 'Saquon Barkley', 'RB', NULL, 'Philadelphia Eagles', 19, 355, 22),
+(3, 'Bijan Robinson', 'RB', 7, 'Atlanta Falcons', 25, 342, 20),
 (4, 'Derrick Henry', 'RB', NULL, 'Baltimore Ravens', 25, 336, 20),
-(5, 'Brock Purdy', 'QB', 6, 'SF 49ers', 30, 283, 18),
-(6, 'Lamar Jackson', 'QB', NULL, 'Baltimore Ravens', 29, 430, 25),
-(7, 'Josh Allen', 'QB', 6, 'Buffalo Bills', 23, 379, 22),
-(8, 'De\'Von Achane', 'RB', 6, 'Miami Dolphins', 5, 300, 17),
-(13, 'Ja\'Marr Chase', 'WR', NULL, 'Cincinnati Bengals', 19, 403, 24),
-(14, 'Justin Jefferson', 'WR', 6, 'Cincinnati Bengals', 17, 317, 18),
-(15, 'Amon-Ra St. Brown', 'WR', 6, 'Minnesota Vikings', 20, 316, 19),
-(16, 'Brian Thomas Jr.', 'WR', 6, 'Jacksonville Jaguars', 17, 284, 16),
-(17, 'Drake London', 'WR', NULL, 'Atlanta Falcons', 17, 280, 16),
-(18, 'Brock Bowers', 'TE', 6, 'Las Vegas Raiders', 14, 262, 15),
+(5, 'Brock Purdy', 'QB', 7, 'SF 49ers', 30, 283, 18),
+(6, 'Lamar Jackson', 'QB', 7, 'Baltimore Ravens', 29, 430, 25),
+(7, 'Josh Allen', 'QB', NULL, 'Buffalo Bills', 23, 379, 22),
+(8, 'De\'Von Achane', 'RB', 7, 'Miami Dolphins', 5, 300, 17),
+(13, 'Ja\'Marr Chase', 'WR', 7, 'Cincinnati Bengals', 19, 403, 24),
+(14, 'Justin Jefferson', 'WR', 7, 'Cincinnati Bengals', 17, 317, 18),
+(15, 'Amon-Ra St. Brown', 'WR', 7, 'Minnesota Vikings', 20, 316, 19),
+(16, 'Brian Thomas Jr.', 'WR', 7, 'Jacksonville Jaguars', 17, 284, 16),
+(17, 'Drake London', 'WR', 7, 'Atlanta Falcons', 17, 280, 16),
+(18, 'Brock Bowers', 'TE', 7, 'Las Vegas Raiders', 14, 262, 15),
 (19, 'Trey McBride', 'TE', NULL, 'Arizona Cardinals', 30, 249, 15),
-(20, 'George Kittle', 'TE', 6, 'SF 49ers', 19, 236, 16),
-(21, 'Jonnu Smith', 'TE', NULL, 'Miami Dolphins', 11, 222, 13),
-(22, 'Broncos D/ST', 'D/ST', 6, 'Denver Broncos', 3, 166, 10),
-(23, 'Vikings D/ST', 'D/ST', 6, 'Minnesota Vikings', 7, 152, 9),
-(24, 'Packers D/ST', 'D/ST', 6, 'Green Bay Packers', 0, 140, 8),
-(25, 'Chris Boswell', 'K', 6, 'Pittsburgh Steelers', 4, 188, 11),
-(26, 'Brandon Aubrey', 'K', 6, 'Dallas Cowboys', 0, 187, 11),
+(20, 'George Kittle', 'TE', NULL, 'SF 49ers', 19, 236, 16),
+(21, 'Jonnu Smith', 'TE', 7, 'Miami Dolphins', 11, 222, 13),
+(22, 'Broncos D/ST', 'D/ST', 7, 'Denver Broncos', 3, 166, 10),
+(23, 'Vikings D/ST', 'D/ST', NULL, 'Minnesota Vikings', 7, 152, 9),
+(24, 'Packers D/ST', 'D/ST', 7, 'Green Bay Packers', 0, 140, 8),
+(25, 'Chris Boswell', 'K', 7, 'Pittsburgh Steelers', 4, 188, 11),
+(26, 'Brandon Aubrey', 'K', 7, 'Dallas Cowboys', 0, 187, 11),
 (27, 'Cameron Dicker', 'K', NULL, 'Los Angeles Chargers', 17, 176, 10);
 
 --

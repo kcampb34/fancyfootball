@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2025 at 06:46 AM
+-- Generation Time: May 14, 2025 at 02:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,6 +31,7 @@ CREATE TABLE `user` (
   `userID` int(3) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
+  `securityQ` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
@@ -41,13 +42,14 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userID`, `username`, `password`, `email`, `firstname`, `lastname`, `usertype`) VALUES
-(1, 'Braeden', 'Kenny', 'bmorri16@student.fitchburgstate.edu', 'Braeden', 'Campbell', 1),
-(7, 'dave', 'dave', 'dave@gmail.com', 'dave', 'mor', 0),
-(9, 'bill', 'bill', 'bill@gmail.com', 'bill', 'mar', 0),
-(11, 'bob', 'bob', 'Braeden@gmail.com', 'bob', 'drop', 0),
-(12, 'liam', 'liam', 'liam@gmail.com', 'liam', 'oak', 0),
-(15, 'AlexM', 'miniA', 'AlexM@yahoo.com', 'Alex', 'Mercer', 0);
+INSERT INTO `user` (`userID`, `username`, `password`, `securityQ`, `email`, `firstname`, `lastname`, `usertype`) VALUES
+(1, 'Braeden', 'Kenny', 'Tom Brady', 'bmorri16@student.fitchburgstate.edu', 'Braeden', 'Campbell', 1),
+(12, 'liam', 'liam', 'George Kittle', 'liam@gmail.com', 'liam', 'oak', 0),
+(11, 'bob', 'bob', 'David Montgomery', 'Braeden@gmail.com', 'bob', 'drop', 0),
+(7, 'dave', 'dave', 'David Goff', 'dave@gmail.com', 'dave', 'mor', 0),
+(16, 'KenMor', '12345', 'David Goff', 'kmor@gmail.com', 'Kenny', 'Morris', 0),
+(9, 'bill', 'bill', 'Chuba Hubbard', 'bill@gmail.com', 'bill', 'mar', 0),
+(15, 'AlexM', 'miniA', 'CeeDee Lamb', 'AlexM@yahoo.com', 'Alex', 'Mercer', 0);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +69,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `userID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

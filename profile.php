@@ -119,5 +119,3 @@ $teamData = $teamStmt->fetch(PDO::FETCH_ASSOC);
 
 </body>
 </html>
-
-

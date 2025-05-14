@@ -111,7 +111,7 @@ foreach ($roster as $position => $playerID) {
 }
 echo "</ul>";
 
-echo "<p><a href='selectRoster.php'>Try Again?</a></p>";
+echo "<p><a href='userP.php'>Return to User Page</a></p>";
 
 // Close connection
 closeDB();

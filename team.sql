@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2025 at 06:45 AM
+-- Generation Time: May 14, 2025 at 02:06 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,7 +55,7 @@ CREATE TABLE `team` (
 --
 
 INSERT INTO `team` (`TeamID`, `teamname`, `scores`, `userID`, `QB`, `RB1`, `RB2`, `WR1`, `WR2`, `TE`, `FLEX`, `D/ST`, `K`, `BE1`, `BE2`, `BE3`, `BE4`, `BE5`, `BE6`, `BE7`) VALUES
-(6, 'Sassy Salamanders', 0, 9, 'Brock Purdy', 'Bijan Robinson', 'De\'Von Achane', 'Amon-Ra St. Brown', 'Brian Thomas Jr.', 'Brock Bowers', 'Justin Jefferson', 'Broncos D/ST', 'Brandon Aubrey', 'Packers D/ST', 'Josh Allen', 'Jamyr Gibbs', 'George Kittle', 'Saquon Barkley', 'Vikings D/ST', 'Chris Boswell');
+(7, 'Sassy Salamanders', 0, 9, 'Brock Purdy', 'Jamyr Gibbs', 'Bijan Robinson', 'Amon-Ra St. Brown', 'Ja\'Marr Chase', 'Brock Bowers', 'Justin Jefferson', 'Broncos D/ST', 'Chris Boswell', 'Lamar Jackson', 'Brian Thomas Jr.', 'Drake London', 'Jonnu Smith', 'De\'Von Achane', 'Packers D/ST', 'Brandon Aubrey');
 
 --
 -- Indexes for dumped tables
@@ -77,7 +77,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `team`
 --
 ALTER TABLE `team`
-  MODIFY `TeamID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `TeamID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
