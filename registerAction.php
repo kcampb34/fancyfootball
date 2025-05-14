@@ -9,6 +9,7 @@ $lname = trim(htmlspecialchars($_GET['lname']));
 $pswd = $_GET['pswd'];
 $pswd2 = $_GET['pswd2'];
 $email = trim(htmlspecialchars($_GET['email']));
+$secq = trim(htmlspecialchars($_GET['secq']));
 
 // Redirect with field-specific error messages
 function redirectWithError($field, $message) {
@@ -51,13 +52,14 @@ try {
     }
 
     // Insert new user
-    $sql_insert = "INSERT INTO user (username, firstname, lastname, password, email) 
-                   VALUES (:username, :firstname, :lastname, :password, :email)";
+    $sql_insert = "INSERT INTO user (username, firstname, lastname, securityQ, password, email) 
+                   VALUES (:username, :firstname, :lastname, :securityQ, :password, :email)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindParam(':username', $user, PDO::PARAM_STR);
     $stmt->bindParam(':firstname', $fname, PDO::PARAM_STR);
     $stmt->bindParam(':lastname', $lname, PDO::PARAM_STR);
     $stmt->bindParam(':password', $pswd, PDO::PARAM_STR);
+    $stmt->bindParam(':securityQ', $secq, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
     if ($stmt->execute()) {
@@ -93,4 +95,3 @@ try {
     closeDB();
 }
 ?>
-
