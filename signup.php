@@ -87,6 +87,11 @@
             <div class="item">
                 <label for="pswd">Retype Password</label>
                 <input type="password" name="pswd2" required />
+             </div>
+            <div class="item">
+                <label for="secq">Security Question: Favorite Football Player?</label>
+                <?php if (isset($_GET['error_securityQ'])) echo "<p class='error'>" . htmlspecialchars($_GET['error_securityQ']) . "</p>"; ?>
+                <input type="text" name="secq" required />
             </div>
             <div class="item">
                 <label for="email">Email</label>
